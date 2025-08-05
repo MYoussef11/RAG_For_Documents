@@ -52,15 +52,23 @@ Upload your PDF and start asking questions based on its content.
 ### 5.2. Optional: Share Public Link (if needed)
 
 interface.launch(share=True)
+
 ⚠️ Note: This requires internet access and may not work reliably inside Jupyter or VS Code.
 
 ### 6. How It Works (Under the Hood)
 
 1.Upload: User uploads a PDF file.
+
 2.Text Extraction: File is loaded and split into chunks using LangChain's TextSplitter.
+
 3.Embeddings: Chunks are embedded using a local embedding model.
+
 4.Storage: Embeddings are saved in ChromaDB (local vector store).
+
 5.User Input: User submits a question.
+
 6.Retrieval: System retrieves relevant chunks using vector similarity.
+
 7.Answer Generation: The selected chunks + question are passed to an LLM (e.g., DeepSeek) to generate a final answer.
+
 8.Display: The answer is shown in the Gradio interface.
